@@ -85,6 +85,7 @@
 + 在文件里面创建一个index.js,里面写如下代码
 
 
+
     import axios from "axios"
     
     export function http(config) {
@@ -98,6 +99,9 @@
         return http(config)
     }
    
+   
+
+
 + 使用的时候这样做
 
 
