@@ -1,10 +1,10 @@
 <template>
-  <el-container class="mv_cont">
+  <el-container class="mv_cont" style="margin-left: 10px">
       <el-header class="mv_header" style="height: 100px">
       <checkout></checkout>
       </el-header>
       <el-container class="mv_main">
-          <el-aside width="100%" class="mv_left">
+          <el-aside width="99%" class="mv_left">
               <keep-alive>
                   <mv_left_li></mv_left_li>
               </keep-alive>
@@ -33,6 +33,7 @@
 <style scoped>
   .mv_cont{
       width: 100%;
+      padding: 20px 0px;
   }
     .mv_main{
         margin-top:-40px;

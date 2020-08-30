@@ -5,14 +5,14 @@
             <router-link to="/home/main">首页</router-link>
          </li>
           <li>
-            <router-link to="/home/Popular recommendation">热门推荐</router-link>
+            <router-link to="/home/Popular recommendation">歌单</router-link>
            </li>
          <li>
             <router-link to="/home/mv">MV</router-link>
          </li>
-         <li>
-            <router-link to="/home/radio station">电台</router-link>
-         </li>
+          <li>
+             <router-link to="/home/geshou">热门歌手</router-link>
+          </li>
          <li>
             <router-link to="/home/my">个人中心</router-link>
          </li>
@@ -46,15 +46,17 @@
       text-align: center;
       line-height: 60px;
       cursor: pointer;
+       transition: 1.5s;
    }
    ul li:nth-child(1){
       margin-left: 20px;
    }
  ul li:hover{
-    background:#409EFF;
+     background: darkgrey;
+     border-radius: 12px;
  }
 .color{
-   background:#409EFF;
+
 }
 li a{
    text-decoration: none;

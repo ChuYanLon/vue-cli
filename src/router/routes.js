@@ -4,7 +4,10 @@ export default [
     //默认优先进入登录页面
     {
         path:"",
-         component:()=>import("../view/logn/logn")
+         component:()=>import("../view/logn/logn"),
+        meta:{
+            title:"咪咕音乐登录页面"
+        }
     },
     //主页面
     {
@@ -20,7 +23,8 @@ export default [
             next()
         },
         meta:{
-            auth:true
+            auth:true,
+            title:"首页"
         },
 
         //主页面里面需要现在的子数据
@@ -53,19 +57,9 @@ export default [
                     },
                 //    歌单
                     {
-                        path:"gedan",
+                        path:"gedan.vue",
                         component:()=>import("../view/Popular recommendation/gedan")
                     },
-                //    电台
-                    {
-                        path:"diantai",
-                        component:()=>import("../view/Popular recommendation/diantai")
-                    },
-                //    歌手
-                    {
-                        path: "geshou",
-                        component:()=>import("../view/Popular recommendation/geshou")
-                    }
                 ]
             },
             //mv
@@ -74,24 +68,31 @@ export default [
                 component:()=>import("../view/home/  children/mv")
             },
             //电台
-            {
-                path: "radio station",
-                component:()=>import("../view/home/  children/radio station")
-            },
             //个人主页
             {
                 path:"my",
                 component:()=>import("../view/home/  children/my")
+            },
+            //    歌手
+            {
+                path: "geshou",
+                component:()=>import("../view/home/  children/geshou")
             }
         ]
     },
     {
         path: "/Video playback",
-        component:()=>import("../play/Video playback")
+        component:()=>import("../play/Video playback"),
+        meta: {
+            title: "咪咕视频在线播放"
+        }
     },
     {
         path: "/music player",
-        component:()=>import("../play/music player")
+        component:()=>import("../play/music player"),
+        meta: {
+            title: "咪咕音乐在线播放"
+        }
     }
 
 ]

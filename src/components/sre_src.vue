@@ -2,7 +2,7 @@
     <div v-on:keypress.enter="src_bth">
         <span>|</span>
         <input type="text" class="text" style="height: 50px" v-model="src.src" placeholder="请输入歌手名字或者是mv的名字">
-        <el-button type="primary" icon="el-icon-search" class="bth" @click="src_bth" >搜索</el-button>
+        <el-button type="primary" icon="el-icon-search" class="bth" @click="src_bth">搜索</el-button>
     </div>
 </template>
 <script>
@@ -40,7 +40,7 @@
 <style scoped>
     div {
         position: relative;
-        margin-left: 24px;
+        margin-left: 90px;
     }
 
     .text {
@@ -48,15 +48,20 @@
         margin-top: 3.5px;
         width: 300px;
         border: none;
-        border: 1px solid #99a9bf;
+        /*border: 1px solid #99a9bf;*/
         text-indent: 10px;
     }
 
     .bth {
         border-radius: 0px 10px 10px 0px;
-        height: 51.5px;
+        height: 50px;
         position: absolute;
-        top: 3.8px;
+        top: 3.5px;
+        left: 230px;
+       box-sizing: border-box;
+        border: 1px solid floralwhite;
+        font-size: 20px;
+        background: url("../assets/image/my/timg.gif");
     }
 
     span {

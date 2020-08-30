@@ -16,20 +16,19 @@
         },
         mounted() {
             this.$http({
-                // url:"/banner"
                 url:"/personalized/newsong"
             }).then(res=>{
                 this.url.push(res.result)
-                // console.log(this.url)
-                console.log(res.result)
+                this.$store.state.sre_src.url.mp3.url.push(res.result)
+                // console.log(this.$store.state.sre_src.url.mp3.url)
             })
         },
         methods:{
             bth(id){
                 this.$store.state.sre_src.url.id=id
-                console.log(this.$store.state.sre_src.url.id)
                 this.$store.state.sre_src.is=true
                 this.$store.state.sre_src.url.is=true
+               this.$store.state.sre_src.arr=[]
                 setTimeout(()=>{
                     this.$store.state.sre_src.is=false
                     console.log( this.$store.state.sre_src.is)

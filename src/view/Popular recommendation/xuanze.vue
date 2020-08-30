@@ -1,9 +1,12 @@
 
 <template>
+    <div>
     <el-table
-            :data="tableData"
+            :data="tableData.slice((currentPage-1)*pagesize,currentPage*pagesize)"
             stripe
-            style="width: 100%">
+            style="width: 100%"
+    >
+
         <el-table-column  label="cover" width="300px" align="center">
             <template slot-scope="scope">
                 <div class="block"><el-avatar shape="square" :size="50" :src="scope.row.coverImgUrl"></el-avatar></div>
@@ -12,49 +15,48 @@
         <el-table-column
                 prop="id"
                 label="歌单ID"
-                width="300">
+                width="180">
         </el-table-column>
         <el-table-column
                 prop="name"
-                label="歌单名"
-                width="350">
+                label="歌单创建者"
+                width="180">
         </el-table-column>
         <el-table-column
-                prop="creator.nickname"
-                label="歌单创建者"
-                width="300"
-           >
+                prop="description"
+                label="作者有话说">
         </el-table-column>
         <el-table-column
                 label="操作"
-                width="210">
+                width="200">
             <template slot-scope="scope">
-                <el-button type="primary" @click="gedan_2_bth(scope.row)">获取歌单</el-button>
+                <el-button type="primary" @click="gedan_1_bth(scope.row)">获取歌单{{nu}}</el-button>
             </template>
-
         </el-table-column>
     </el-table>
+    <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[5, 10, 20, 40]"
+            :page-size="pagesize"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="tableData.length">
+    </el-pagination>
+    </div>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                tableData:[]
+                tableData:this.$store.state.gedan_arr.arr,
+                currentPage: 1,
+                pagesize: 10,
             }
         },
-        mounted() {
-            this.$http({
-                url:"/related/playlist?id=2965239834"
-            }).then(res=>{
-               for (let i=0;i<res.playlists.length;i++){
-                   this.tableData.push(res.playlists[i])
-               }
-
-            })
-        },
         methods:{
-            gedan_2_bth(val){
+            gedan_1_bth(val){
                 this.$store.state.gedan_arr.id=""
                 this.$store.state.gedan_arr.id=val.id
                 this.$http({
@@ -64,9 +66,16 @@
                     this.$store.state.gedan_arr.arr.push(res.playlist)
                     console.log(this.$store.state.gedan_arr.arr[0])
                     this.$store.state.gedan_arr.is_is=true
-
                 })
-            }
+            },
+            //    初始化每页数据
+            handleSizeChange(size) {
+                this.pagesize = size
+            },
+            //    点击第几页
+            handleCurrentChange(currentPage) {
+                this.currentPage = currentPage
+            },
         }
     }
 </script>

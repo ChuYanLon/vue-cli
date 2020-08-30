@@ -2,9 +2,9 @@
 export default {
     //登录数据
     form: {
-        text: "",
-        pass: "",
-        name: "",
+        text: "123456",
+        pass: "123456",
+        name: "巧克力",
         md5:"**********",
         is:false,
         alter:false,
@@ -53,5 +53,11 @@ export default {
       loading:true,
       is:false
 
-  }
+  },
+//    歌单
+    gedan_arr:{
+        arr:[],
+        is:false,
+        is_is:false,
+    }
 }

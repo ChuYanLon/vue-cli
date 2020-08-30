@@ -19,7 +19,7 @@
             </el-container>
         </el-container>
         <!--            内容-->
-        <el-main class="main">
+        <el-main class="main" style="padding: 0;">
            <el-container>
                <keep-alive>
                <router-view></router-view>

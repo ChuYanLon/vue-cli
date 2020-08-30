@@ -48,6 +48,11 @@
         },
         methods: {
             mv_left_bth({id,img,title,name}) {
+                this.$store.state.sre_src.arr=[]
+                this.$store.state.sre_src.url.mp3.name=""
+                this.$store.state.sre_src.url.mp3.title=""
+                this.$store.state.sre_src.url.mp3.img=""
+                this.$store.state.sre_src.url.mp3.url=[]
                 this.$store.state.mv_src.mp4.name = name
                 this.$store.state.mv_src.mp4.id = id
                 this.$store.state.mv_src.mp4.title = title

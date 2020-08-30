@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="margin-left: 47px">
         <el-table style="width: 100%;" :data="userList.slice((currentPage-1)*pagesize,currentPage*pagesize)"
                   v-loading="this.$store.state.mv_src.loading"
         >
@@ -71,11 +71,16 @@
             },
             mv_right_bth({img}){
                 this.$store.state.mv_src.arr=[]
+                this.$store.state.mv_src.mp4.url=""
+                this.$store.state.mv_src.mp4.img=""
+                this.$store.state.mv_src.mp4.title=""
+                this.$store.state.mv_src.mp4.name=""
                 this.id=img.id
                 this.$http({
                     url: "/artist/mv?id=" + this.id
                 }).then(res => {
                     if (res.mvs.length>0) {
+                        this.$store.state.sre_src.is=true
                         this.$store.state.mv_src.mp4.is=true
                          this.$store.state.mv_src.arr=[]
                           this.$store.state.mv_src.arr.push(res.mvs)
@@ -85,7 +90,8 @@
                         console.log(this.$store.state.mv_src.arr)
                         setTimeout(()=>{
                             this.$store.state.mv_src.mp4.is=false
-                        },1000)
+                            this.$store.state.sre_src.is=false
+                        },500)
                     }else{
                         alert("抱歉没有MV")
                     }
@@ -96,20 +102,23 @@
             mv_left_bth({img}){
                 this.id=""
                 this.id=img.id
+                this.$store.state.sre_src.arr=[]
+                this.$store.state.sre_src.url.mp3.name=""
+                this.$store.state.sre_src.url.mp3.title=""
+                this.$store.state.sre_src.url.mp3.img=""
+                this.$store.state.sre_src.url.mp3.url=[]
                 this.$http({
                     url:"/artist/top/song?id="+this.id
                 }).then(res=>{
-                    this.$store.state.sre_src.arr=[]
                     this.$store.state.sre_src.is=true
-                    this.$store.state.sre_src.arr.push(res.songs)
-                    // console.log( this.$store.state.sre_src.arr)
+                    for (let i=0;i<res.songs.length;i++){
+                        this.$store.state.sre_src.arr.push(res.songs[i])
+                    }
+
                     this.$router.push("/music player")
                     console.log(res.songs)
                     console.log( this.$store.state.sre_src.arr[0])
                 })
-                // console.log(this.id)
-                // console.log(img)
-                // console.log(img.id)
             }
         },
         mounted() {

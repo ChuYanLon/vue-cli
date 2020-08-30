@@ -5,6 +5,7 @@
             <span>歌手: {{this.$store.state.mv_src.mp4.name}}</span>
             <div class="video_on">
                 <el-button type="primary" @click="video_home">返回首页</el-button>
+                <el-button type="primary" @click="music_geshou">返回歌手页面</el-button>
                 <el-button type="primary" @click="video_mv">返回MV</el-button>
             </div>
         </el-header>
@@ -116,7 +117,11 @@
                     this.$store.state.mv_src.mp4.is=false
                 },1000)
 
-            }
+            },
+            music_geshou(){
+                this.$router.push("/home/geshou")
+                this.title=[]
+            },
         }
     }
 </script>

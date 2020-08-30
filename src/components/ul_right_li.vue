@@ -1,21 +1,15 @@
 <template>
-    <ul>
+    <ul  style="height: 580px">
         <h1 style="text-align: center;line-height: 50px;font-family: 华文琥珀;color: darkgreen;letter-spacing: 10px;
             font-size: 30px;
            ">MV视频</h1>
         <!--        此处用for循环把所有的歌曲打印出来，点击事件传递当前歌曲的id，用于axios请求-->
         <li v-for="(value,i) in this.$store.state.sre_src.arr_mv" :key="i"
-            @click="ul_right_li_bth(value.mvid)"
+            @click="ul_right_li_bth({mvid:value.mvid,val:value})"
         >
             {{value.name}}
         </li>
-        <hr>
-        <el-alert
-                title="本次搜索歌MV曲数:"
-                type="success"
-                :description=this.$store.state.sre_src.arr_mv.length
-                show-icon>
-        </el-alert>
+
     </ul>
 </template>
 
@@ -30,15 +24,21 @@
             }
         },
         methods:{
-            ul_right_li_bth(mvid){
+            ul_right_li_bth({mvid,val}){
+                this.$store.state.mv_src.mp4.name=""
+                this.$store.state.mv_src.mp4.img=""
+                this.$store.state.mv_src.mp4.title=""
                 this.$store.state.mv_src.mp4.is=true
+                this.$store.state.mv_src.is=true
                 this.$store.state.mv_src.mp4.id=mvid
-                this.$store.state.mv_src.mp4.name=this.$store.state.sre_src.url.mp3.name
+                this.$store.state.mv_src.mp4.name=val.artists[0].name
                 this.$store.state.mv_src.mp4.img=this.$store.state.sre_src.url.mp3.img
-                this.$store.state.mv_src.mp4.title= this.$store.state.sre_src.url.mp3.title
+                this.$store.state.mv_src.mp4.title=val.name
                 this.$router.push("/Video playback")
-
-
+                setTimeout(()=>{
+                    this.$store.state.mv_src.mp4.is=false
+                    this.$store.state.mv_src.is=false
+                },500)
             },
 
         }
@@ -50,7 +50,7 @@
         text-indent: 30px;
         display: block;
         line-height: 30px;
-        padding: 10px;
+        color: #f8f8f8;
         font-size: 15px;
         cursor: pointer;
     }

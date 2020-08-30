@@ -1,16 +1,10 @@
 <template>
     <ul>
         <li class="color">
-            <router-link to="/home/Popular recommendation/Ppular_one">推荐</router-link>
+            <router-link to="/home/Popular recommendation/Ppular_one">推荐歌单</router-link>
         </li>
         <li>
-            <router-link to="/home/Popular recommendation/gedan">热门歌单</router-link>
-        </li>
-        <li>
-            <router-link to="/home/Popular recommendation/diantai">热门电台</router-link>
-        </li>
-        <li>
-            <router-link to="/home/Popular recommendation/geshou">热门歌手</router-link>
+            <router-link to="/home/Popular recommendation/gedan">热门歌单分类</router-link>
         </li>
     </ul>
 </template>
@@ -24,27 +18,26 @@
 <style scoped>
     ul{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         line-height: 60px;
-        /*background: #FFFFFF;*/
     }
     ul li{
         color: #FFFFFF;
-        width: 300px;
-        text-align: center;
+        width: 100px;
+        /*text-align: center;*/
         line-height: 60px;
         cursor: pointer;
-        transition: 1s
+        /*transition: 3s;*/
+        border-left: 5px solid floralwhite;
+        /*box-sizing: border-box;*/
     ;
     }
     ul li:nth-child(1){
         margin-left: 20px;
+        border-left: none;
     }
     ul li:hover{
-        background:#409EFF;
-    }
-    .color{
-        background:#409EFF;
+      border-bottom: 5px solid cornflowerblue;
     }
     li a{
         text-decoration: none;

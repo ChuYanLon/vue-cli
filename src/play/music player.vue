@@ -5,7 +5,8 @@
             <span>歌手:  {{audio.artist}}</span>
             <div class="music_on">
             <el-button type="primary" @click="music_in">返回首页</el-button>
-            <el-button type="primary">主要按钮</el-button>
+            <el-button type="primary" @click="music_geshou">返回歌手页面</el-button>
+            <el-button type="primary" @click="music_gedan">返回歌单</el-button>
             </div>
         </el-header>
         <el-container class="music_play">
@@ -24,6 +25,7 @@
                         <h2 style="text-align: left;color: #f8f8f8">咪咕音乐在线播放  :</h2>
                         <li v-for="(value,i) in title[0]" :key="i" @click="music_bth(value.id)">
                             {{value.name}}
+                            <span v-if="value.name==null">{{value.id}}</span>
                         </li>
                     </ul>
                 </el-main>
@@ -60,7 +62,7 @@
                 this.title=[]
                 // eslint-disable-next-line vue/no-side-effects-in-computed-properties
                 this.title.push(this.$store.state.sre_src.arr)
-                console.log(this.$store.state.sre_src.arr[0])
+                // console.log(this.$store.state.sre_src.arr[0])
                 //用歌曲id请求歌曲地址
                 let url=this.$store.state.sre_src.url.id
                 if (this.$store.state.sre_src.is==true){
@@ -136,6 +138,14 @@
                 this.$router.push("/home")
                 this.title=[]
 
+            },
+            music_geshou(){
+                this.$router.push("/home/geshou")
+                this.title=[]
+            },
+            music_gedan(){
+                this.$router.push("/home/Popular recommendation")
+                this.title=[]
             }
         }
 

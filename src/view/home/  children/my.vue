@@ -8,7 +8,7 @@
                     </div>
                 </el-col>
             </el-row>
-            <hr>
+            <hr style="margin-left: -35px">
         </el-header>
         <el-main class="my_main">
            <el-form ref="form" label-width="55px" class="my_main_input">
@@ -53,18 +53,16 @@
 <style scoped>
   #my_cont{
       width: 500px;
-      /*height: 500px;*/
-      background: #f8f8f8;
       box-shadow: 0px 0px 20px #d3dce6;
+      background: url("../../../assets/image/my/timg.gif");
   }
     .my_header{
-        /*background: #d3dce6;*/
         width: 400px;
-        /*height: 100px;*/
         margin: 0 auto;
         text-align: center;
         line-height: 50px;
         margin-top: 20px;
+        text-indent: -31px;
     }
    .my_main{
        background: #d3dce6;

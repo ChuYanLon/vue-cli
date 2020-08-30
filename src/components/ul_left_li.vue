@@ -10,19 +10,7 @@
        >
           {{value.name}}
         </li>
-        <hr>
-        <el-alert
-                title="本次搜索内容为(如没有搜索则是古风歌曲):"
-                type="success"
-                :description=this.$store.state.sre_src.src
-                show-icon>
-        </el-alert>
-        <el-alert
-                title="本次搜索音频数:"
-                type="success"
-                :description=this.$store.state.sre_src.arr.length
-                show-icon>
-        </el-alert>
+
     </ul>
 </template>
 
@@ -59,6 +47,7 @@
      line-height: 30px;
      padding: 10px;
      font-size: 15px;
+     color: #f8f8f8;
      cursor: pointer;
  }
 
