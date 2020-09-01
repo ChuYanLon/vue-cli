@@ -67,7 +67,6 @@ export default [
                 path:"mv",
                 component:()=>import("../view/home/  children/mv")
             },
-            //电台
             //个人主页
             {
                 path:"my",
@@ -77,6 +76,18 @@ export default [
             {
                 path: "geshou",
                 component:()=>import("../view/home/  children/geshou")
+            },
+            {
+                path: "bang",
+                component:()=>import("../view/home/  children/bang")
+            },
+            {
+                path:"pai",
+                component:()=>import("../view/home/  children/pai")
+            },
+            {
+                path: "src_new",
+                component:()=>import("../view/sre/src_new")
             }
         ]
     },
@@ -93,7 +104,7 @@ export default [
         meta: {
             title: "咪咕音乐在线播放"
         }
-    }
+    },
 
 ]
 //都使用懒加载

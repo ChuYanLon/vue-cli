@@ -13,6 +13,9 @@
           <li>
              <router-link to="/home/geshou">热门歌手</router-link>
           </li>
+          <li>
+              <router-link to="/home/bang">排行</router-link>
+          </li>
          <li>
             <router-link to="/home/my">个人中心</router-link>
          </li>

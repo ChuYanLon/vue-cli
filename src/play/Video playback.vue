@@ -4,9 +4,16 @@
             <span>当前正在播放: {{this.$store.state.mv_src.mp4.title}}</span>
             <span>歌手: {{this.$store.state.mv_src.mp4.name}}</span>
             <div class="video_on">
-                <el-button type="primary" @click="video_home">返回首页</el-button>
-                <el-button type="primary" @click="music_geshou">返回歌手页面</el-button>
-                <el-button type="primary" @click="video_mv">返回MV</el-button>
+                <el-button @click="show3 = !show3" class="el-icon-menu"></el-button>
+                <div style="margin-top: 20px">
+                    <el-collapse-transition>
+                        <div v-show="show3">
+                            <el-button type="primary" @click="video_home"  class="bth_on">返回首页</el-button>
+                            <el-button type="primary" @click="music_geshou" class="bth_on">返回歌手页面</el-button>
+                            <el-button type="primary" @click="video_mv" class="bth_on">返回MV</el-button>
+                        </div>
+                    </el-collapse-transition>
+                </div>
             </div>
         </el-header>
         <el-container class="video_play">
@@ -35,7 +42,7 @@
             </el-container>
         </el-container>
         <el-footer class="video_footer">
-            @咪咕视频在线播放|2020-8-15 8:25|制作者:褚燕龙
+            @网易云音乐|2020-8-15 8:25|制作者:褚燕龙
         </el-footer>
     </el-container>
 </template>
@@ -45,6 +52,7 @@
         name: "Video playback",
         data(){
             return{
+                show3:false,
                 title:[],
                 playerOptions : {
                     playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
@@ -182,10 +190,15 @@
 }
 .video_on{
     position: absolute;
-    right: 10px;
+    right: 30px;
     top: 10px;
 }
-
+.video_on .bth_on{
+    display: block;
+    margin: 0;
+    width: 300px;
+    border-radius: 0;
+}
 
 
 

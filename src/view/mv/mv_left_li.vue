@@ -2,6 +2,9 @@
     <div>
         <el-table style="width: 100%;" :data="userList.slice((currentPage-1)*pagesize,currentPage*pagesize)"
                   v-loading="this.$store.state.mv_src.loading"
+                  element-loading-text="拼命加载中"
+                  element-loading-spinner="el-icon-loading"
+                  element-loading-background="rgba(0, 0, 0, 0.8)"
         >
         <el-table-column label="MV名字" prop="name" width="500" align="center">
         </el-table-column>

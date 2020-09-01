@@ -1,7 +1,10 @@
 <template>
     <div style="margin-left: 47px">
         <el-table style="width: 100%;" :data="userList.slice((currentPage-1)*pagesize,currentPage*pagesize)"
-                  v-loading="this.$store.state.mv_src.loading"
+                  v-loading="loading"
+                  element-loading-text="拼命加载中"
+                  element-loading-spinner="el-icon-loading"
+                  element-loading-background="rgba(0, 0, 0, 0.8)"
         >
 
             <el-table-column  label="头像" width="300px" align="center">
@@ -57,7 +60,8 @@
                 pagesize: 10,
                 userList:[],
                 img1v1Url:[],
-                id:""
+                id:"",
+                loading:true
             }
         },
         methods: {
@@ -122,7 +126,7 @@
             }
         },
         mounted() {
-            this.$store.state.mv_src.loading=true
+            this.loading=true
             this.$http({
                 url:"/top/artists?offset=0&limit=100"
             }).then(res=>{
@@ -130,7 +134,7 @@
                 for (let i=0;i<res.artists.length;i++){
                       this.userList.push(res.artists[i])
                 }
-                this.$store.state.mv_src.loading=false
+                this.loading=false
             })
         }
     }

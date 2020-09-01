@@ -4,10 +4,18 @@
              <span>当前正在播放: {{audio.name}}</span>
             <span>歌手:  {{audio.artist}}</span>
             <div class="music_on">
-            <el-button type="primary" @click="music_in">返回首页</el-button>
-            <el-button type="primary" @click="music_geshou">返回歌手页面</el-button>
-            <el-button type="primary" @click="music_gedan">返回歌单</el-button>
-            </div>
+                <el-button @click="show3 = !show3" class="el-icon-menu"></el-button>
+                    <div style="margin-top: 20px">
+                        <el-collapse-transition>
+                            <div v-show="show3">
+                                <el-button type="primary" @click="music_in" class="bth_on">返回首页</el-button>
+                                <el-button type="primary" @click="music_geshou" class="bth_on">返回歌手页面</el-button>
+                                <el-button type="primary" @click="music_gedan" class="bth_on">返回歌单</el-button>
+                                <el-button type="primary" @click="music_gequku" class="bth_on">返回榜单</el-button>
+                            </div>
+                        </el-collapse-transition>
+                    </div>
+                </div>
         </el-header>
         <el-container class="music_play">
                <el-aside class="play" style="background: black;overflow: hidden;position: relative;border-right: 5px solid #bbbbbb" width="70%">
@@ -32,7 +40,7 @@
             </el-container>
         </el-container>
         <el-footer class="music_footer">
-            @咪咕音乐在线播放|2020-8-15 8:25|制作者:褚燕龙
+            @网易云音乐|2020-8-15 8:25|制作者:褚燕龙
         </el-footer>
     </el-container>
 </template>
@@ -44,6 +52,7 @@
 
         data() {
             return {
+                show3: false,
                  mp3:"",
                 title:[],
                 audio: {
@@ -146,6 +155,10 @@
             music_gedan(){
                 this.$router.push("/home/Popular recommendation")
                 this.title=[]
+            },
+            music_gequku(){
+                this.$router.push("/home/pai")
+                this.title=[]
             }
         }
 
@@ -207,10 +220,15 @@
 }
     .music_on{
         position: absolute;
-        right: 10px;
+        right: 30px;
         top: 10px;
     }
-
+.music_on .bth_on{
+    display: block;
+    width: 300px;
+    margin: 0;
+    border-radius: 0;
+}
 
 
 

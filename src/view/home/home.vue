@@ -1,7 +1,7 @@
 <template>
     <el-container id="cont">
         <el-header class="migu" style="height: 100px">
-            咪咕音乐
+            网易云音乐
         </el-header>
 <!--        轮播图-->
         <el-header class="header" style="height: 350px;">
@@ -22,12 +22,13 @@
         <el-main class="main" style="padding: 0;">
            <el-container>
                <keep-alive>
-               <router-view></router-view>
+               <router-view :key="$route.path+$route.query.t"></router-view>
                </keep-alive>
+<!--               此处是禁止销毁组件-->
            </el-container>
         </el-main>
         <el-footer class="footer">
-            <h3>@咪咕音乐|2000|8|25@制作人:褚燕龙</h3>
+            <h3>@网易云音乐|2000|8|25@制作人:褚燕龙</h3>
         </el-footer>
     </el-container>
 </template>

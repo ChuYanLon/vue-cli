@@ -59,5 +59,10 @@ export default {
         arr:[],
         is:false,
         is_is:false,
+    },
+//    排行榜
+    pai:{
+        arr:[],
+        is:false
     }
 }

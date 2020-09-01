@@ -23,6 +23,12 @@ export default {
       }).then(res=>{
            state.sre_src.arr=[]
            state.sre_src.arr_mv=[]
+              router.push({
+               path:"/home/src_new",
+               query:{
+                   t:Date.now()
+               }
+           })
             for (let i=0;i<res.result.songs.length;i++){
                 if (res.result.songs[i].mvid!=0){
                     state.sre_src.arr_mv.push(res.result.songs[i])
@@ -30,11 +36,9 @@ export default {
                     state.sre_src.arr.push(res.result.songs[i])
                 }
             }
-          // state.sre_src.arr.push(res.result.songs)
-           console.log( state.sre_src.arr)
-           console.log( state.sre_src.arr_mv)
       }).catch(error=>{
          console.log(error)
       })
+
    }
 }
