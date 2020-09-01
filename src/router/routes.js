@@ -57,7 +57,7 @@ export default [
                     },
                 //    歌单
                     {
-                        path:"gedan.vue",
+                        path:"gedan",
                         component:()=>import("../view/Popular recommendation/gedan")
                     },
                 ]

@@ -3,9 +3,9 @@
         <div slot="header" class="clearfix">
             <span>最新专辑</span>
         </div>
-        <el-carousel height="500px" direction="vertical" :autoplay="false">
+        <el-carousel height="800px" direction="vertical" :autoplay="false">
             <el-carousel-item v-for="(value,i) in list[0]" :key="i">
-                <img :src="value.picUrl" alt="">
+                <img :src="value.picUrl" alt="" @click="bth(value)">
             </el-carousel-item>
         </el-carousel>
     </el-card>
@@ -16,7 +16,8 @@
         name: "main_botton_center",
         data(){
             return{
-             list:[]
+             list:[],
+                id:""
             }
         },
         mounted() {
@@ -26,6 +27,19 @@
                 console.log(res)
                 this.list.push(res.albums)
             })
+        },
+        methods:{
+            bth(val){
+                this.$http({
+                    url:"/playlist/detail?id="+val.id
+                }).then(res=>{
+                    this.$store.state.gedan_arr.arr=[]
+                    this.$store.state.gedan_arr.arr.push(res.playlist)
+                    console.log(this.$store.state.gedan_arr.arr[0])
+                    this.$store.state.gedan_arr.is=true
+                    this.$router.push("/home/Popular recommendation/Ppular_one")
+                })
+            }
         }
     }
 </script>
@@ -55,5 +69,6 @@
     img{
         height: 100%;
         width: 100%;
+        cursor: pointer;
     }
 </style>

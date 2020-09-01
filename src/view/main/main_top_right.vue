@@ -2,7 +2,6 @@
     <el-card class="box-card" style="margin-top: 10px;margin-bottom: 10px">
         <div slot="header" class="clearfix">
             <span>推荐MV</span>
-<!--            <el-button style="float: right; padding: 3px 0" type="text">more>></el-button>-->
         </div>
         <div v-for="(value,i) in list[0]" :key="i" class="text item">
             <el-row>
@@ -15,7 +14,7 @@
                             <span>{{value.copywriter}}</span>
                             <div class="bottom clearfix">
                                 <time class="time">{{ currentDate }}</time>
-                                <el-button type="text" class="button">播放MV</el-button>
+                                <el-button type="text" class="button" @click="mv_bth(value)">播放MV</el-button>
                             </div>
                         </div>
                     </el-card>
@@ -40,6 +39,29 @@
             }).then(res=>{
                 this.list.push(res.result)
             })
+        },
+        methods:{
+            mv_bth(val){
+                this.$store.state.mv_src.arr=[]
+                this.$store.state.mv_src.mp4.url=""
+                this.$store.state.mv_src.mp4.img=""
+                this.$store.state.mv_src.mp4.title=""
+                this.$store.state.mv_src.mp4.name=""
+                this.$http({
+                    url: "/mv/url?id="+val.id
+                }).then(res => {
+                        this.$store.state.sre_src.is=true
+                        this.$store.state.mv_src.mp4.is=true
+                        this.$store.state.mv_src.mp4.id=val.id
+                        this.$router.push("/Video playback")
+                        console.log(this.$store.state.mv_src.arr)
+                        setTimeout(()=>{
+                            this.$store.state.mv_src.mp4.is=false
+                            this.$store.state.sre_src.is=false
+                        },500)
+                    console.log(res)
+                })
+            }
         }
     }
 </script>

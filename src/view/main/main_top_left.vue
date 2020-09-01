@@ -2,7 +2,6 @@
     <el-card class="box-card" style="margin-top: 10px;margin-bottom: 10px">
         <div slot="header" class="clearfix">
             <span>推荐音乐</span>
-            <el-button style="float: right; padding: 3px 0" type="text">more>></el-button>
         </div>
         <el-table style="width: 100%;" :data="userList.slice((currentPage-1)*pagesize,currentPage*pagesize)"
                   v-loading="loading"

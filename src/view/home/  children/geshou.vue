@@ -118,7 +118,6 @@
                     for (let i=0;i<res.songs.length;i++){
                         this.$store.state.sre_src.arr.push(res.songs[i])
                     }
-
                     this.$router.push("/music player")
                     console.log(res.songs)
                     console.log( this.$store.state.sre_src.arr[0])

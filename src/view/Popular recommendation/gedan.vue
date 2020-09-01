@@ -2,7 +2,12 @@
 <template>
     <el-table
             :data="tableData"
-            style="width: 100%">
+            style="width: 100%"
+            v-loading="loading"
+            element-loading-text="拼命加载中"
+            element-loading-spinner="el-icon-loading"
+            element-loading-background="rgba(0, 0, 0, 0.8)"
+    >
         <el-table-column type="expand">
             <template slot-scope="props">
                 <el-form label-position="left" inline class="demo-table-expand">
@@ -68,7 +73,8 @@
         data() {
             return {
                 tableData:[],
-                id:""
+                id:"",
+                loading:true
             }
         },
         mounted() {
@@ -79,7 +85,7 @@
                 for (let i=0;i<res.tags.length;i++){
                     this.tableData.push(res.tags[i])
                 }
-
+                 this.loading=false
             })
         },
         methods:{

@@ -1,7 +1,7 @@
 <template>
     <el-carousel :interval="4000" type="card" height="300px" style="margin-top: 20px">
         <el-carousel-item v-for="(value,i) in url[0]" :key="i">
-            <img :src="value.picUrl" @click="bth(value.id)">
+            <img :src="value.imageUrl" @click="bth(value.encodeId)">
         </el-carousel-item>
     </el-carousel>
 </template>
@@ -16,11 +16,11 @@
         },
         mounted() {
             this.$http({
-                url:"/personalized/newsong"
+                url:"/banner"
             }).then(res=>{
-                this.url.push(res.result)
-                this.$store.state.sre_src.url.mp3.url.push(res.result)
-                // console.log(this.$store.state.sre_src.url.mp3.url)
+                this.url.push(res.banners)
+                this.$store.state.sre_src.url.mp3.url.push(res.banners.encodeId)
+                console.log(res)
             })
         },
         methods:{
