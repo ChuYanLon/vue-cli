@@ -37,7 +37,11 @@
                     this.$store.state.gedan_arr.arr.push(res.playlist)
                     console.log(this.$store.state.gedan_arr.arr[0])
                     this.$store.state.gedan_arr.is=true
-                    this.$router.push("/home/Popular recommendation/Ppular_one")
+                    this.$message({
+                        message: '歌单页面',
+                        type: 'success'
+                    });
+                    this.$router.push("/home/Popular recommendation")
                 })
             }
         }

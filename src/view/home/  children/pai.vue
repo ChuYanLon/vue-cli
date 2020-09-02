@@ -90,7 +90,6 @@
                 currentPage: 1,
                 pagesize: 5,
                 id: "",
-                hackReset:true
             }
         },
         mounted() {

@@ -8,7 +8,7 @@ export default {
         md5:"**********",
         is:false,
         alter:false,
-        imgurl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598506757196&di=54583eb3479cc9a5e2ff2f2407138758&imgtype=0&src=http%3A%2F%2Fdik.img.kttpdq.com%2Fpic%2F101%2F70319%2Fe9c38924bad0ac5d_1440x900.jpg"
+        imgurl:"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599023303530&di=ffdb33ff364df09708558656c234da4e&imgtype=0&src=http%3A%2F%2F01.minipic.eastday.com%2F20170414%2F20170414173232_4a717c3f9a94e5376cedc0b40b6e660b_6.jpeg"
     },
     //歌曲
     sre_src: {
