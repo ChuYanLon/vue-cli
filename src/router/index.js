@@ -27,6 +27,10 @@ export default new router({
                 {
                     path:"tem",
                     component:()=>import("../view/tem")
+                },
+                {
+                    path:"tab main",
+                    component:()=>import("../view/tab_man")
                 }
             ]
         },

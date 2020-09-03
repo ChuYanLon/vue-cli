@@ -5,9 +5,6 @@
       </el-header>
        <el-main>
            <src></src>
-<!--           <el-button type="primary"  class="io_bth el-icon-video-camera" @click="bth_tabs">-->
-<!--               <router-link to="/home/main">直播</router-link>-->
-<!--           </el-button>-->
            <el-dropdown class="io_bth">
                <el-button type="primary" class="ibth">
                    功能列表<i class="el-icon-arrow-down el-icon--right"></i>
@@ -18,6 +15,9 @@
                    </el-dropdown-item>
                    <el-dropdown-item>
                        <router-link to="/home/tem">视频解析</router-link>
+                   </el-dropdown-item>
+                   <el-dropdown-item>
+                       <router-link to="/home/tab main">每日推荐500部影片</router-link>
                    </el-dropdown-item>
                </el-dropdown-menu>
            </el-dropdown>

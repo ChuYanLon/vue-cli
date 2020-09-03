@@ -19,8 +19,9 @@
             // eslint-disable-next-line vue/return-in-computed-property
             text(){
                 if (this.$store.state.is==true){
-                    let url=`/api/vatfs/resource_site_collect/getVDetail?vid=`+this.$store
-                        .state.arr[0].data[0].vid
+                    // eslint-disable-next-line vue/no-side-effects-in-computed-properties
+                      this.$store.state.mp4.id=this.$store.state.arr[0].data[0].vid
+                    let url=`/api/vatfs/resource_site_collect/getVDetail?vid=`+this.$store.state.mp4.id
                     // eslint-disable-next-line vue/no-async-in-computed-properties
                     http({
                         url:url

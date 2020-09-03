@@ -5,7 +5,7 @@ Vue.use(axios)
 export default function http(config) {
     let http=axios.create({
         baseURL:"https://api.eyunzhu.com",
-        timeout:5000
+        timeout:100000
     })
     return http(config)
 }

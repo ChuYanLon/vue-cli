@@ -15,6 +15,7 @@ export default new Vuex.Store({
             url:"",
             img:"",
             is:false,
+            id:""
         }
     },
     mutations:{

@@ -11,8 +11,14 @@
                     </div>
                      <div class="img" v-for="(value,i) in this.$store.state.arr[0].data" :key="i">
                          <img :src="value.pic" @click="bth_img(value)">
-                         <h2 style="position: absolute; left:0px;top: 0px;color:green;font-weight: bold">{{value.name}}</h2>
-                         <h2 style="position: absolute; right: 0;bottom: 10px;color: floralwhite">{{value.label}}</h2>
+                         <h2 style="position: absolute; left:0px;top: 0px;color:floralwhite;font-weight: bold;
+                         background: dimgray;width: 100%;height: 30px;
+                         text-align: center;line-height: 30px;
+                         ">{{value.name}}</h2>
+                         <h2 style="position: absolute; right: 0;bottom: 0px;color: floralwhite;
+                         background: slategray;width: 100%;height: 30px;
+                         text-align: center;line-height: 30px;
+                        ">{{value.label}}</h2>
                      </div>
                 </el-card>
             </el-main>
@@ -76,7 +82,7 @@
         clear: both
     }
     .img{
-        background:url("../assets/img/01.gif");
+        background:url("../assets/img/01.jpg");
         background-position: center;
         width: 22%;
         height: 300px;
@@ -93,7 +99,7 @@
     }
     @media screen and (max-width: 800px){
         .img{
-            background:url("../assets/img/01.gif");
+            background:url("../assets/img/01.jpg");
             background-position: center;
             width: 100%;
             height: 300px;

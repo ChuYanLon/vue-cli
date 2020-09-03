@@ -73,7 +73,8 @@
      box-shadow: 0px 0px 15px darkgrey;
  }
     .img {
-        background: green;
+        background: url("../assets/img/02.jpg");
+        background-size: 100% 100%;
 
     }
     .img img{
