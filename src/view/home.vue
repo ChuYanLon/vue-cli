@@ -5,9 +5,22 @@
       </el-header>
        <el-main>
            <src></src>
-           <el-button type="primary"  class="io_bth el-icon-video-camera" @click="bth_tabs">
-               <router-link to="/home/main">直播</router-link>
-           </el-button>
+<!--           <el-button type="primary"  class="io_bth el-icon-video-camera" @click="bth_tabs">-->
+<!--               <router-link to="/home/main">直播</router-link>-->
+<!--           </el-button>-->
+           <el-dropdown class="io_bth">
+               <el-button type="primary" class="ibth">
+                   功能列表<i class="el-icon-arrow-down el-icon--right"></i>
+               </el-button>
+               <el-dropdown-menu slot="dropdown">
+                   <el-dropdown-item>
+                       <router-link to="/home/main">直播</router-link>
+                   </el-dropdown-item>
+                   <el-dropdown-item>
+                       <router-link to="/home/tem">视频解析</router-link>
+                   </el-dropdown-item>
+               </el-dropdown-menu>
+           </el-dropdown>
            <keep-alive>
            <router-view :key="$route.path+$route.query.t"></router-view>
            </keep-alive>
@@ -39,14 +52,18 @@
       border-radius: 0;
       position: absolute;
       top:321px;
-      left: 895px;
+      left: 950px;
       height: 40px;
       border-right: 1px solid #bbbbbb;
       box-sizing: border-box;
   }
   a{
       text-decoration: none;
-      color: #FFFFFF;
+      color: black;
+  }
+  .ibth{
+      height: 39px;
+      border-radius: 0;
   }
 @media screen and (max-width: 800px){
     .header_home{
@@ -62,7 +79,7 @@
         border-radius: 0;
         position: absolute;
         top:321px;
-        left:221px;
+        left:280px;
         height: 40px;
         border-right: 1px solid #bbbbbb;
         box-sizing: border-box;

@@ -6,8 +6,8 @@
             <el-main>
                 <el-card class="box-card">
                     <div slot="header" class="clearfix">
-                        <span>卡片名称</span>
-                        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+                        <span>共搜索{{this.$store.state.arr[0].total}}部影片</span>
+                        <el-button style="float: right; padding: 3px 0" type="text">{{newdata}}</el-button>
                     </div>
                      <div class="img" v-for="(value,i) in this.$store.state.arr[0].data" :key="i">
                          <img :src="value.pic" @click="bth_img(value)">
@@ -56,6 +56,11 @@
                 })
             }
         },
+        data(){
+            return{
+                newdata:new Date()
+            }
+        }
     }
 </script>
 

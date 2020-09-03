@@ -24,6 +24,10 @@ export default new router({
                     path: "video",
                     component:()=>import("../components/play")
                 },
+                {
+                    path:"tem",
+                    component:()=>import("../view/tem")
+                }
             ]
         },
     ]

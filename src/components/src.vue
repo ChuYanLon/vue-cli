@@ -72,8 +72,9 @@
 .bth{
     border-radius: 0 ;
     position: absolute;
-    top: 0.5px;
-    right: 0;
+    top: 0px;
+    right: 119px;
+    height: 40px;
 }
 .tab_ic{
     position: fixed;
@@ -91,7 +92,7 @@
         border-radius: 0 ;
         position: absolute;
         top: 0.5px;
-        right: 0px;
+        right: 116px;
     }
 }
 
