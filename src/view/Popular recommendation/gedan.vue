@@ -81,7 +81,7 @@
             this.$http({
                 url:"/playlist/hot"
             }).then(res=>{
-                console.log(res)
+
                 for (let i=0;i<res.tags.length;i++){
                     this.tableData.push(res.tags[i])
                 }
@@ -89,10 +89,6 @@
             })
         },
         methods:{
-            gedan(id){
-                console.log(id)
-                this.$store.state.gedan_arr.is=true
-            },
             gedan_bth(val){
                 this.$store.state.gedan_arr.is=true
                 this.$store.state.gedan_arr.is=false
@@ -104,7 +100,6 @@
                    }).then(res=>{
                        this.$store.state.gedan_arr.arr=[]
                        this.$store.state.gedan_arr.arr.push(res.playlist)
-                       console.log(this.$store.state.gedan_arr.arr[0])
                        this.$store.state.gedan_arr.is=true
                    })
                })
@@ -121,7 +116,7 @@
                         this.$store.state.gedan_arr.arr.push(res.playlists[i])
                     }
                     this.$store.state.gedan_arr.is=true
-                    console.log(this.$store.state.gedan_arr.arr)
+
                 })
             }
         }

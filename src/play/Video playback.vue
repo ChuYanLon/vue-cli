@@ -86,8 +86,6 @@
                 this.title=[]
                 // eslint-disable-next-line vue/no-side-effects-in-computed-properties
                 this.title.push(this.$store.state.mv_src.arr)
-                console.log(   this.title)
-                console.log(this.$store.state.mv_src.arr)
                 if (this.$store.state.mv_src.mp4.is){
                     let url=this.$store.state.mv_src.mp4.id
                     // eslint-disable-next-line vue/no-async-in-computed-properties
@@ -95,7 +93,6 @@
                         url:"/mv/url?id="+url
                     }).then(res=>{
                         this.$store.state.mv_src.mp4.url=res.data.url
-                        console.log(res)
                         this.playerOptions.sources[0].src=this.$store.state.mv_src.mp4.url
                         this.playerOptions.poster=this.$store.state.mv_src.mp4.img
                     })
@@ -117,7 +114,6 @@
             video_ul({id,img,title,name}){
                 this.$store.state.mv_src.mp4.is=true
                 this.$store.state.mv_src.mp4.id=id
-                console.log(id,img,title,name)
                 this.$store.state.mv_src.mp4.img=img,
                     this.$store.state.mv_src.mp4.name=name,
                     this.$store.state.mv_src.mp4.title=title,

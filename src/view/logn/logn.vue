@@ -1,6 +1,6 @@
 <template>
     <div class="div"  v-on:keypress.enter="bth">
-        <h3 class="h3">咪咕音乐登录界面</h3>
+        <h3 class="h3">网易云音乐登录界面</h3>
        <el-form ref="form" :model="form" label-width="80px" class="form" >
            <el-form-item label="账户" prop="text">
                <el-input v-model="form.text" type="text"></el-input>

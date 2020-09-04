@@ -42,7 +42,7 @@
                         this.$store.state.mv_src.is=true
                         this.$store.state.mv_src.arr=[]
                         this.$store.state.mv_src.arr.push(res.data)
-                        console.log( this.$store.state.mv_src.arr)
+
                         setTimeout(()=>{
                             this.$store.state.mv_src.is=false
                         },5000)

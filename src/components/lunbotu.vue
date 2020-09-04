@@ -20,7 +20,6 @@
             }).then(res=>{
                 this.url.push(res.banners)
                 this.$store.state.sre_src.url.mp3.url.push(res.banners.encodeId)
-                console.log(res)
             })
         },
         methods:{
@@ -31,7 +30,6 @@
                this.$store.state.sre_src.arr=[]
                 setTimeout(()=>{
                     this.$store.state.sre_src.is=false
-                    console.log( this.$store.state.sre_src.is)
                 },200)
                 this.$router.push("/music player")
             }

@@ -71,7 +71,6 @@
                 this.title=[]
                 // eslint-disable-next-line vue/no-side-effects-in-computed-properties
                 this.title.push(this.$store.state.sre_src.arr)
-                // console.log(this.$store.state.sre_src.arr[0])
                 //用歌曲id请求歌曲地址
                 let url=this.$store.state.sre_src.url.id
                 if (this.$store.state.sre_src.is==true){
@@ -111,8 +110,6 @@
                     this.$http({//请求歌曲详情
                         url: "/song/detail?ids="+url   //当前的url是this.$store.state.sre_src.url.id
                     }).then(res=>{
-                        console.log(res)
-                        console.log(this.url)
                         //把请求过来的歌手名字设置到 this.$store.state.sre_src.url.mp3.name
                         this.$store.state.sre_src.url.mp3.name=res.songs[0].ar[0].name
                         //把请求过来的歌曲图片设置到 this.$store.state.sre_src.url.mp3.img

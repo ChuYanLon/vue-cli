@@ -90,8 +90,6 @@
                           this.$store.state.mv_src.arr.push(res.mvs)
                           this.$store.state.mv_src.mp4.id=this.id
                            this.$router.push("/Video playback")
-                        // console.log(  this.$store.state.mv_src.arr)
-                        console.log(this.$store.state.mv_src.arr)
                         setTimeout(()=>{
                             this.$store.state.mv_src.mp4.is=false
                             this.$store.state.sre_src.is=false
@@ -119,8 +117,6 @@
                         this.$store.state.sre_src.arr.push(res.songs[i])
                     }
                     this.$router.push("/music player")
-                    console.log(res.songs)
-                    console.log( this.$store.state.sre_src.arr[0])
                 })
             }
         },

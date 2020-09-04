@@ -64,7 +64,7 @@
                 setTimeout(() => {
                     this.$store.state.mv_src.mp4.is = false
                 }, 100)
-                console.log(id,img,title,name)
+
                 this.$router.push("/Video playback")
             },
             //    初始化每页数据
@@ -78,9 +78,7 @@
             bth(){
                 console.log(this.m)
             },
-            // one_on(){
-            //     this.userList.push(this.$store.state.mv_src.arr)
-            // }
+
         },
         computed:{
             // eslint-disable-next-line vue/return-in-computed-property

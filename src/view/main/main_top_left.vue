@@ -62,7 +62,7 @@
 
                 }
                 this.loading=false
-                console.log(this.userList)
+
             })
         },
         methods:{
@@ -89,7 +89,7 @@
                     for (let i=0;i<res.songs.length;i++){
                         this.$store.state.sre_src.arr.push(res.songs[i])
                     }
-                    console.log(this.$store.state.sre_src.arr)
+
                     this.$router.push("/music player")
                 })
 

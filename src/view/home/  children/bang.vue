@@ -132,7 +132,6 @@
                     })
 
                 })
-                console.log(id)
             },
             bth_img2(id){
                 this.id = id
@@ -149,7 +148,6 @@
                         }
                     })
                 })
-                console.log(id)
             },
             bth_img3(id){
                 this.id = id
@@ -166,7 +164,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img4(id){
                 this.id = id
@@ -183,7 +181,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img5(id){
                 this.id = id
@@ -200,7 +198,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img6(id){
                 this.id = id
@@ -217,7 +215,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img7(id){
                 this.id = id
@@ -234,7 +232,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img8(id){
                 this.id = id
@@ -251,7 +249,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
             bth_img9(id){
                 this.id = id
@@ -268,7 +266,7 @@
                         }
                     })
                 })
-                console.log(id)
+
             },
         },
     }

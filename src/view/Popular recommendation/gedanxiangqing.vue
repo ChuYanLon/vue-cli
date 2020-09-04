@@ -45,9 +45,9 @@
                 this.$store.state.sre_src.arr=[]
                 for (let i=0;i<this.$store.state.gedan_arr.arr[0].trackIds.length;i++){
                     this.$store.state.sre_src.arr.push(this.$store.state.gedan_arr.arr[0].trackIds[i])
-                    console.log(this.$store.state.gedan_arr.arr[0].trackIds[i])
+
                 }
-                console.log( this.$store.state.sre_src.arr)
+
                 this.$router.push("/music player")
             },
             goBack() {

@@ -54,7 +54,7 @@
                         this.$store.state.mv_src.mp4.is=true
                         this.$store.state.mv_src.mp4.id=val.id
                         this.$router.push("/Video playback")
-                        console.log(this.$store.state.mv_src.arr)
+
                         setTimeout(()=>{
                             this.$store.state.mv_src.mp4.is=false
                             this.$store.state.sre_src.is=false

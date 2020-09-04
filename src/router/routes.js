@@ -6,7 +6,7 @@ export default [
         path:"",
          component:()=>import("../view/logn/logn"),
         meta:{
-            title:"咪咕音乐登录页面"
+            title:"网易云音乐登录页面"
         }
     },
     //主页面
@@ -95,14 +95,14 @@ export default [
         path: "/Video playback",
         component:()=>import("../play/Video playback"),
         meta: {
-            title: "咪咕视频在线播放"
+            title: "网易云视频在线播放"
         }
     },
     {
         path: "/music player",
         component:()=>import("../play/music player"),
         meta: {
-            title: "咪咕音乐在线播放"
+            title: "网易云咪咕音乐在线播放"
         }
     },
 

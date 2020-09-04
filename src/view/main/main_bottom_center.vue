@@ -24,7 +24,7 @@
             this.$http({
                 url:"/album/newest"
             }).then(res=>{
-                console.log(res)
+
                 this.list.push(res.albums)
             })
         },
@@ -35,7 +35,6 @@
                 }).then(res=>{
                     this.$store.state.gedan_arr.arr=[]
                     this.$store.state.gedan_arr.arr.push(res.playlist)
-                    console.log(this.$store.state.gedan_arr.arr[0])
                     this.$store.state.gedan_arr.is=true
                     this.$message({
                         message: '歌单页面',

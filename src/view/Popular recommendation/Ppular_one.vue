@@ -62,7 +62,7 @@
                 }).then(res=>{
                     this.$store.state.gedan_arr.arr=[]
                     this.$store.state.gedan_arr.arr.push(res.playlist)
-                    console.log(this.$store.state.gedan_arr.arr[0])
+
                     this.$store.state.gedan_arr.is_is=true
 
                 })

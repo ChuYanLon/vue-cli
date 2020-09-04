@@ -77,7 +77,6 @@
                     this.$store.state.sre_src.is = false   //设定毫秒定时器把，上一层开启的 歌曲请求地址axios 关闭
                 }, 100)
                 this.$router.push("/music player")
-                console.log(val)
                 for (let i=0;i<this.tableData[1].length;i++){
                     this.$store.state.sre_src.arr.push(this.tableData[1][i])
                 }
@@ -97,7 +96,6 @@
             for (let i = 0; i < this.$store.state.pai.arr.length; i++) {
                 this.tableData.push(this.$store.state.pai.arr[0].tracks)
             }
-            console.log(this.tableData[1][0].name)
         },
     }
 </script>
