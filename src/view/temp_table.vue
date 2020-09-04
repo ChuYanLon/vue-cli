@@ -40,7 +40,6 @@
                 })
             },
             bth_img(val){
-                console.log(val)
                 let url=`/api/vatfs/resource_site_collect/getVDetail?vid=`+val.vid
                 http({
                     url:url
@@ -57,7 +56,6 @@
                     setTimeout(()=>{
                         this.$store.state.mp4.is=false
                     },100)
-                    console.log(this.$store.state.mp4.arr)
                     this.$router.push("/home/video")
                 })
             }

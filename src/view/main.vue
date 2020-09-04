@@ -50,9 +50,7 @@
             http({
                 url:"/plugin/eyunzhu_vatfs_api/api/getLiveSource"
             }).then(res=>{
-                console.log(res)
                 this.tableData.push(res.data.data)
-                console.log(this.tableData)
             })
         },
         methods:{

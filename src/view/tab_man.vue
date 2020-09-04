@@ -41,7 +41,7 @@
             <el-table-column
                     width="200">
                 <template slot-scope="scope">
-                    <el-button type="primary" @click="tab_man(scope.row)">获取歌单</el-button>
+                    <el-button type="primary" @click="tab_man(scope.row)">获取影片</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -56,12 +56,6 @@
         methods: {
             goBack() {
               this.$router.push("/home")
-            },
-            handleEdit(index, row) {
-                console.log(index, row);
-            },
-            handleDelete(index, row) {
-                console.log(index, row);
             },
             tab_man(val){
                 console.log(val)
@@ -81,7 +75,6 @@
                     setTimeout(()=>{
                         this.$store.state.mp4.is=false
                     },100)
-                    console.log(this.$store.state.mp4.arr)
                     this.$router.push("/home/video")
                 })
 

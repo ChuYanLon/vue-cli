@@ -53,7 +53,6 @@
                     this.tableData=[]
                     // eslint-disable-next-line vue/no-side-effects-in-computed-properties
                     this.tableData.push(this.$store.state.mp4.arr[0])
-                    console.log(this.$store.state.mp4.arr)
                 }
             },
         }
